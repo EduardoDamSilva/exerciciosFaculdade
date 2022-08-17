@@ -170,4 +170,68 @@ select especialidade, dtNasc from Professor where funcao = "monitor";
 update Professor set dtNasc = '2001-05-13' where idProfessor = 3;
 truncate Professor;
 
+-- Ex 05 
 
+use faculdade1adsa;
+
+create table Curso(
+idCurso int primary key auto_increment,
+nome varchar(50),
+sigla char(3),
+coordenador varchar(50)
+);
+
+insert into Curso(nome, sigla, coordenador) values
+	('Banco de Dados', 'BDA', 'Paulo'),
+	('Algoritmo', 'ALG', 'Ninguem'),
+	('Pesquisa e Inovação', 'PIN', 'Brandão');
+    
+select * from Curso;
+select coordenador from Curso;
+select * from Curso where sigla = 'bda';
+select * from Curso order by nome asc;
+select * from Curso order by nome desc;
+select * from Curso where nome like 'B%';
+select * from Curso where nome like '%s';
+select * from Curso where nome like '_a%';
+select * from Curso where nome like '%o_';
+
+truncate Curso;
+
+-- Ex 06
+
+use faculdade1adsa;
+
+create table Revista(
+idRevista int primary key auto_increment,
+nome varchar(40),
+categoria varchar(30)
+);
+
+insert into Revista(nome) values
+	('Epoca'),
+    ('Veja'),
+    ('Isto é'),
+	('Quatro Rodas');
+    
+select * from Revista;
+update Revista set categoria = 'Notícias' where idRevista = 1;
+update Revista set categoria = 'Notícias' where idRevista = 2;
+update Revista set categoria = 'Notícias' where idRevista = 3;
+
+insert into Revista values
+	(null, 'tititi', 'Fofoca'),
+    (null, 'Nature', 'Cientifica'),
+    (null, 'Forbes', 'Dinheiro');
+    
+select * from Revista;
+
+desc Revista;
+
+alter table Revista modify column categoria varchar(40);
+
+desc Revista;
+
+alter table Revista add column periodicidade varchar(15);
+select * from Revista;
+alter table Revista drop column periodicidade;
