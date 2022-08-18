@@ -1,3 +1,2 @@
-# primeiroRepositorio
-primeiro repositorio
+# Exercicios da faculdade
 
