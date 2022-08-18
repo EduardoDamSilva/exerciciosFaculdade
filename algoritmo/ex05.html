@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Coloque o número que você deseja a tabuada</h1>
+    <input type="number" id = "input_num">
+    <button onclick = "calcularTabuada()" id="btn_ver_tabuada">Ver Tabuada</button>
+    <div id="resultado_tabuada"></div>
+</body>
+</html>
+<script>
+
+    function calcularTabuada(){ 
+        resultado_tabuada.innerHTML = `
+        ${input_num.value} x 1 = ${input_num.value} <br>
+        ${input_num.value} x 2 = ${input_num.value * 2} <br>
+        ${input_num.value} x 3 = ${input_num.value * 3} <br>
+        ${input_num.value} x 4 = ${input_num.value * 4} <br>
+        ${input_num.value} x 5 = ${input_num.value * 5} <br>
+        ${input_num.value} x 6 = ${input_num.value * 6} <br>
+        ${input_num.value} x 7 = ${input_num.value * 7} <br>
+        ${input_num.value} x 8 = ${input_num.value * 8} <br>
+        ${input_num.value} x 9 = ${input_num.value * 9}
+        `   
+    }
+
+</script>
