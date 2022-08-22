@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor do carro: <input type="number" id="input_valorDoCarro">
+    Insira a taxa de juros ao mês: <input type="number" id="input_taxaDeJuros">
+    Insira a quantidade de parcelas: <input type="number" id="input_qtdParcelas">
+    <button onclick="calcularPreju()">Calcular prejú</button>
+    <div id="div_mostrarResultado"></div>
+</body>
+</html>
+<script>
+    function calcularPreju(){
+        var total = input_valorDoCarro.value * (1 + input_taxaDeJuros.value) ** input_qtdParcelas.value
+        div_mostrarResultado = `Seu carro vai sair por um total de R$${input_valorDoCarro}. Após 1 mês, ele já vai valer só R$${input_valorDoCarro * 0.8}. Porque comprou financiado, vai pagar o correspondente a ${total} carros;`
+    }
+</script>
