@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    background-color: black;
+    border-bottom: 2px solid blue;
+}
+
+.container{
+    margin: 0 auto;
+    padding: 10px 5px;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.container ul{
+    display: flex;
+    justify-content: space-be;
+    list-style: none;
+}
+
+li{
+    margin-right: 20px;
+    color: yellow;
+}
+
+.titulo{
+    color: blue;
+}
