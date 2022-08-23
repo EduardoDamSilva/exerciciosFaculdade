@@ -1,2 +1,2 @@
-# Exercicios da faculdade
+# Exercicios da faculdade SpTech
 
