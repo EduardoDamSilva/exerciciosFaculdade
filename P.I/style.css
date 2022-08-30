@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 header{
     background-color: black;
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid #32b9cd;
+    padding: 15px 0;
 }
 
 .container{
@@ -22,15 +25,15 @@ header{
 
 .container ul{
     display: flex;
-    justify-content: space-be;
+    justify-content: space-between;
     list-style: none;
-}
-
-li{
-    margin-right: 20px;
-    color: yellow;
+    width: 350px;
+    color: #efb661;
+    font-weight: 700;
+    font-size: 12px;
 }
 
 .titulo{
-    color: blue;
+    color: #32b9cd;
+    font-size: 14px;
 }
