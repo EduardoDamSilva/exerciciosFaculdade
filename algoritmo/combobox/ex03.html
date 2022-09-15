@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img{
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <select name="time" id="selectTime">
+    <option value="cor">Corinthians</option>
+    <option value="sp">São Paulo</option>
+    <option value="pal">Palmeiras</option>
+    <option value="san">Santos</option>
+  </select>
+  <button onclick="verEscudo()">
+    Ver Escudo
+  </button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+  function verEscudo(){
+    var time = selectTime.value
+
+    if(time == 'cor'){
+      divResultado.innerHTML = "<img src = 'https://http2.mlstatic.com/D_NQ_NP_778536-MLB31671307546_082019-O.webp'>"
+    } else if (time == 'sp'){
+      divResultado.innerHTML = "<img src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/770px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png'>"
+    } else if (time == 'pal'){
+      divResultado.innerHTML = "<img src = 'https://i0.wp.com/multarte.com.br/wp-content/uploads/2020/09/logomarca-palmeiras10.jpg?fit=820%2C880&ssl=1'>"
+    } else if (time == 'san'){
+      divResultado.innerHTML = "<img src = 'https://upload.wikimedia.org/wikipedia/commons/9/92/LogoSantosFC.png'>"
+    }
+    
+  }
+</script>
