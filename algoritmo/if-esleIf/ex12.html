@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um ano: <input type="text" id="inputAno">
+    <button onclick="verificarAnoExibirMsg()">Ver fato</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+    function verificarAnoExibirMsg(){
+        var ano = Number(inputAno.value)
+
+        if(ano < 1965){
+            divResultado.innerHTML  = `No ano ${ano} o email nem havia sido criado ainda ...`
+        } else if (ano == 1965){
+            divResultado.innerHTML = `No ano ${ano} o email estava sendo criado ... `
+        } else if (ano <= 1969){
+            divResultado.innerHTML = `No ano ${ano} o email já havia sido criado ...`
+        } else { 
+            divResultado.innerHTML = `No ano ${ano} o email já havia sido aprimorado - Poderia ser enviado para outro computador ...`
+        }
+    }
+</script>
