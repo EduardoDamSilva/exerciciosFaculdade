@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Você já clicou <span id="spanNumero">0</span> vezes</p>
+  <button onclick="incrementarNumero()">
+    Clique cabalístio
+  </button>
+</body>
+</html>
+<script>
+
+  var numero = Number(spanNumero.innerHTML)
+  function incrementarNumero(){
+    numero++
+    spanNumero.innerHTML = numero
+    verificarNumeroCabalistio()
+  }
+
+  function verificarNumeroCabalistio(){
+    if(numero == 3 || numero == 4 || numero == 7 || numero == 10){
+      alert(`Você clicou ${numero} vezes e Juliana gosta desse número!`)
+    }
+  }
+</script>
