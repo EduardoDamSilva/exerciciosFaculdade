@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira a nota de avaliação: <input type="text" id="inputNotaAvaliacao">
+  <button onclick="avaliarNota()">Avaliar</button>
+  <div id="divResultado">
+    <img src="estrelaVazia.png" alt="estrela vazia">
+    <img src="estrelaVazia.png" alt="estrela vazia">
+    <img src="estrelaVazia.png" alt="estrela vazia">
+    <img src="estrelaVazia.png" alt="estrela vazia">
+    <img src="estrelaVazia.png" alt="estrela vazia">
+  </div>
+</body>
+</html>
+<script>
+  function avaliarNota(){
+    var nota = Number(inputNotaAvaliacao.value)
+
+    if(nota < 0 || nota > 5){
+      alert("Nota inválida. Digite de 0 a 5")
+    } else if (nota < 0.5){
+      divResultado.innerHTML = `
+      <img src="avaliacao.png" alt="estrela pela metade">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      `
+    } else if (nota < 1){
+      divResultado.innerHTML = `
+      <img src="estrela.png" alt="estrela">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      `
+    } else if (nota < 1.5){
+      divResultado.innerHTML = `
+      <img src="estrela.png" alt="estrela">
+      <img src="avaliacao.png" alt="estrela pela metade">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      `
+    } else if (nota < 2){
+      divResultado.innerHTML = `
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      `
+    } else if (nota < 2.5){
+      divResultado.innerHTML = `
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="avaliacao.png" alt="estrela pela metade">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      `
+    } else if (nota < 3){
+      divResultado.innerHTML = `
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      `
+    } else if (nota < 3.5){
+      divResultado.innerHTML = `
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="avaliacao.png" alt="estrela pela metade">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      `
+    } else if (nota < 4){
+      divResultado.innerHTML = `
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrelaVazia.png" alt="estrela vazia">
+      `
+    } else if (nota < 4.5){
+      divResultado.innerHTML = `
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="avaliacao.png" alt="estrela pela metade">
+      `
+    } else if (nota <= 5){
+      divResultado.innerHTML = `
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      <img src="estrela.png" alt="estrela">
+      `
+    }
+  }
+</script>
