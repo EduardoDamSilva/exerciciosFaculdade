@@ -1,42 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Barlow', sans-serif;
-}
-
-header{
-    background-color: black;
-    border-bottom: 2px solid #32b9cd;
-    padding: 15px 0;
-}
-
-.container{
-    margin: 0 auto;
-    padding: 10px 5px;
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.container ul{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    width: 350px;
-    color: #efb661;
-    font-weight: 700;
-    font-size: 12px;
-}
-
-.titulo{
-    color: #32b9cd;
-    font-size: 14px;
-}
 
 .banner{
     background-image: url(assets/img/bg-jelly-fish-para_outras_pags.png);
@@ -96,12 +58,3 @@ header{
     text-align: center;
 }
 
-footer{
-    background-color: #32b9cd;
-    padding: 45px 0;
-}
-
-footer .container{
-    justify-content: center;
-    color: white;
-}
