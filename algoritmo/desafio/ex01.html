@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de competidores: <input type="text" id="inputQtdCompetidor">
+    <br>
+    Insira a quantidade de folhas compradas: <input type="text" id="inputFolhasCompradas">
+    <br>
+    Insira a quantidade de folhas para cada competidor <input type="text" id="inputFolhasCompetidor">
+
+    <button onclick="verifcarFolhas()">
+    Fazer a conta
+    </button>
+
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+    function verifcarFolhas(){
+        var numCompetidores = Number(inputQtdCompetidor.value)
+        var folhasCompradas = Number(inputFolhasCompradas.value)
+        var folhasPorCompetidor = Number(inputFolhasCompetidor.value)
+
+        var folhasNecessarias = numCompetidores * folhasPorCompetidor
+        
+        if(folhasNecessarias <= folhasCompradas){
+            divResultado.innerHTML = "S"
+        } else {
+            divResultado.innerHTML = "N"
+        }
+    }
+</script>
