@@ -161,5 +161,52 @@ select f.nome, a.* from funcionario f join acompanhante a on fkFuncionario = idA
 
 select * from funcionario f join acompanhante a join setor s on fkFuncionario = idAcompanhante = idSetor;
 
+-- Ex 04
+
+create database treinador;
+use treinador;
+
+create table treinador(
+idTreinador int auto_increment primary key,
+nome varchar(45),
+telefone varchar(45),
+email varchar(45),
+fkTreinadorNovato int,
+foreign key (fkTreinadorNovato) references treinador(idTreinador)
+) auto_increment = 100;
+
+create table nadador (
+idNadador int auto_increment primary key,
+nome varchar(45),
+estado char(2),
+dtNasc date,
+fkNadador int,
+foreign key (fkNadador) references treinador(idTreinador)
+) auto_increment = 10;
 
 
+
+insert into nadador values
+	(null, 'Binho', 'SP', '2001-05-30', 100),
+	(null, 'Dudola', 'SP', '2001-05-30', 101),
+	(null, 'Ig', 'RJ', '2001-06-30', 102),
+	(null, 'Melancia', 'BH', '2001-09-23', 100);
+    
+insert into treinador values
+	(null, 'Brandão', '(11)99088-9023', 'fernado.brandao@sptech.school', null),
+	(null, 'Taiza', '(11)99088-9023', 'taiza@sptech.school', null),
+	(null, 'Vivian', '(11)99238-2391', 'vivian.silva@sptech.school', null),
+    (null, 'Paulo', '(11)90391-2389', 'paulo.silva@sptech.scholl', null);
+    
+    update treinador set fkTreinadorNovato = 100 where idTreinador = 101;
+    update treinador set fkTreinadorNovato = 102 where idTreinador = 103;
+
+select * from treinador;
+select * from nadador;
+select * from treinador t join nadador n on t.idTreinador = n.fkNadador;
+select * from treinador t join nadador n on t.idTreinador = n.fkNadador where t.nome = 'Brandão';
+select * from treinador t join treinador tr on tr.idTreinador = t.fkTreinadorNovato;
+select * from treinador t join treinador tr on tr.idTreinador = t.fkTreinadorNovato where t.nome = 'Taiza';
+select * from treinador t join treinador tr on tr.idTreinador = t.fkTreinadorNovato join nadador n on n.fkNadador = t.idTreinador;
+select * from treinador t join treinador tr on tr.idTreinador = t.fkTreinadorNovato join nadador n on n.fkNadador = t.idTreinador where tr.nome = 'Brandão';
+ 

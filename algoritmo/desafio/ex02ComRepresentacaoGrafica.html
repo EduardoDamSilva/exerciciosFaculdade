@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divRepresentacaoGrafica{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        #retangulo1{
+            background-color: blue;
+            position: absolute;
+            /* top: 10px;
+            width: 10px;
+            height: 10px; */
+        }
+
+        #retangulo2{
+            background-color: red;
+            position: absolute;
+            /* top: 10px;
+            width: 20px;
+            height: 20px; */
+        }
+    </style>
+</head>
+<body>
+    Primeiro Retangulo: <br>
+    X0: <input type="text" id="inputPrimeiroRetangulox0">
+    Y0: <input type="text" id="inputPrimeiroRetanguloy0">
+    X1: <input type="text" id="inputPrimeiroRetangulox1">
+    Y1: <input type="text" id="inputPrimeiroRetanguloy1">
+
+    <br>
+    Segundo Retangulo: <br>
+    X0: <input type="text" id="inputSegundoRetangulox0">
+    Y0: <input type="text" id="inputSegundoRetanguloy0">
+    X1: <input type="text" id="inputSegundoRetangulox1">
+    Y1: <input type="text" id="inputSegundoRetanguloy1">
+    <br>
+    <button onclick="verificarColisao()">Verificar colisão</button>
+    <div id="divResultado"></div>
+    Representacao Grafica:
+    <br>
+    <div id="divRepresentacaoGrafica">
+        <div id="retangulo1"></div>
+        <div id="retangulo2"></div>
+    </div>
+</body>
+</html>
+
+<script>
+        var primeiroRetangulox0 = 0
+        var primeiroRetanguloy0 = 0
+        var primeiroRetangulox1 = 0
+        var primeiroRetanguloy1 = 0
+        
+        var primeiroRetangulox2 =  0
+        var primeiroRetanguloy2 =  0
+        var primeiroRetangulox3 =  0
+        var primeiroRetanguloy3 =  0
+
+        var segundoRetangulox0 = 0
+        var segundoRetanguloy0 = 0
+        var segundoRetangulox1 = 0
+        var segundoRetanguloy1 = 0
+        var segundoRetangulox2 = 0
+        var segundoRetanguloy2 = 0
+        var segundoRetangulox3 = 0
+        var segundoRetanguloy3 = 0
+
+
+
+    function verificarColisao(){
+        primeiroRetangulox0 = Number(inputPrimeiroRetangulox0.value)
+        primeiroRetanguloy0 = Number(inputPrimeiroRetangulox0.value)
+        primeiroRetangulox1 = Number(inputPrimeiroRetangulox1.value)
+        primeiroRetanguloy1 = Number(inputPrimeiroRetanguloy1.value)
+        /* Através das 2 primeiras cordernadas uso elas mesma para achar as outras 2 formando um retângulo */
+        primeiroRetangulox2 = primeiroRetangulox0
+        primeiroRetanguloy2 = primeiroRetanguloy1
+        primeiroRetangulox3 = primeiroRetangulox1
+        primeiroRetanguloy3 = primeiroRetanguloy0
+
+        segundoRetangulox0 = Number(inputSegundoRetangulox0.value)
+        segundoRetanguloy0 = Number(inputSegundoRetanguloy0.value)
+        segundoRetangulox1 = Number(inputSegundoRetangulox1.value)
+        segundoRetanguloy1 = Number(inputSegundoRetanguloy1.value)
+        segundoRetangulox2 = segundoRetangulox0
+        segundoRetanguloy2 = segundoRetanguloy1
+        segundoRetangulox3 = segundoRetangulox1
+        segundoRetanguloy3 = segundoRetanguloy0
+
+        /* Verificar se uma das coordenadas do segundo retângulo é menor que a do primeiro e caso a verificação for true significa que os retângulo colidem, fazendo o código retorar 1 */
+
+        if (
+            (segundoRetangulox0 <= primeiroRetangulox0 && segundoRetanguloy0 <= primeiroRetanguloy0) || (segundoRetangulox0 <= primeiroRetangulox1 && segundoRetanguloy0 <= primeiroRetanguloy1) || (segundoRetangulox0 <= primeiroRetangulox2 && segundoRetanguloy0 <= primeiroRetanguloy2) || (segundoRetangulox0 <= primeiroRetangulox3 && segundoRetanguloy0 <= primeiroRetanguloy3)
+            ){
+            divResultado.innerHTML = "1"
+        } else if (
+            (segundoRetangulox1 <= primeiroRetangulox0 && segundoRetanguloy1 <= primeiroRetanguloy0) || (segundoRetangulox1 <= primeiroRetangulox1 && segundoRetanguloy1 <= primeiroRetanguloy1) || (segundoRetangulox1 <= primeiroRetangulox2 && segundoRetanguloy1 <= primeiroRetanguloy2) || (segundoRetangulox1 <= primeiroRetangulox3 && segundoRetanguloy1 <= primeiroRetanguloy3)
+            ){
+            divResultado.innerHTML = "1"
+        } else if (
+            (segundoRetangulox2 <= primeiroRetangulox0 && segundoRetanguloy2 <= primeiroRetanguloy0) || (segundoRetangulox2 <= primeiroRetangulox1 && segundoRetanguloy2 <= primeiroRetanguloy1) || (segundoRetangulox2 <= primeiroRetangulox2 && segundoRetanguloy2 <= primeiroRetanguloy2) || (segundoRetangulox2 <= primeiroRetangulox3 && segundoRetanguloy2 <= primeiroRetanguloy3)
+            ) {
+            divResultado.innerHTML = "1"
+        } else if (
+            (segundoRetangulox3 <= primeiroRetangulox0 && segundoRetanguloy3 <= primeiroRetanguloy0) || (segundoRetangulox3 <= primeiroRetangulox1 && segundoRetanguloy3 <= primeiroRetanguloy1) || (segundoRetangulox3 <= primeiroRetangulox2 && segundoRetanguloy3 <= primeiroRetanguloy2) || (segundoRetangulox3 <= primeiroRetangulox3 && segundoRetanguloy3 <= primeiroRetanguloy3)
+            ){
+            divResultado.innerHTML = "1"
+        } else {
+            divResultado.innerHTML = "0"
+        }
+
+
+        representacaoGrafica()
+    }
+
+
+    function representacaoGrafica(){
+        /* Primeiro Retangulo */
+        if(primeiroRetangulox0 >= primeiroRetangulox1){
+            var widthRetangulo1 = primeiroRetangulox0 * 10
+            retangulo1.style.width = `${widthRetangulo1}px`
+        } else {
+            var widthRetangulo1 = primeiroRetangulox1 * 10
+            retangulo1.style.width = `${widthRetangulo1}px`
+            
+        }
+
+        if(primeiroRetanguloy0 >= primeiroRetanguloy1){
+            var heightRetangulo1 = primeiroRetanguloy0 * 10
+            retangulo1.style.height = `${heightRetangulo1}px`
+        } else {
+            var heightRetangulo1 = primeiroRetanguloy1 * 10
+            retangulo1.style.height = `${heightRetangulo1}px`
+        }
+
+        /* Segundo Retangulo */
+        if(segundoRetangulox0 >= segundoRetangulox1){
+            var widthRetangulo2 = segundoRetangulox0 * 10
+            retangulo2.style.width = `${widthRetangulo2}px`
+        } else {
+            var widthRetangulo2 = segundoRetangulox1 * 10
+            retangulo2.style.width = `${widthRetangulo2}px`
+        }
+
+        if(segundoRetanguloy0 >= segundoRetanguloy1){
+            var heightRetangulo2 = segundoRetanguloy0 * 10
+            retangulo2.style.height = `${widthRetangulo2}px`
+
+        } else {
+            var heightRetangulo2 = segundoRetanguloy1 * 10
+            retangulo2.style.height = `${widthRetangulo2}px`
+        }
+
+        /* Posição do retangulo*/
+        if(primeiroRetangulox0 <= primeiroRetangulox1){
+            var topRetangulo1 = (primeiroRetangulox0 * 10) 
+            retangulo1.style.top = `${topRetangulo1 + 200}px`
+        } else {
+            var topRetangulo1 = (primeiroRetangulox1 * 10) 
+            retangulo1.style.top = `${topRetangulo1 + 200}px`
+        }
+
+        if(primeiroRetanguloy0 <= primeiroRetanguloy1){
+            var leftRetangulo1 = (primeiroRetanguloy0 * 10) 
+            retangulo1.style.left = `${topRetangulo1 + 50}px`
+        } else {
+            var leftRetangulo1 = (primeiroRetanguloy1 * 10) 
+            retangulo1.style.left = `${topRetangulo1 + 50}px`
+        }
+
+        if(segundoRetangulox0 <= segundoRetangulox1){
+            var topRetangulo2 = (segundoRetangulox0 * 10) 
+            retangulo2.style.top = `${topRetangulo2 + 200}px`
+        } else {
+            var topRetangulo2 = (segundoRetangulox1 * 10) 
+            retangulo2.style.top = `${topRetangulo2 + 200}px`
+        }
+
+        if(segundoRetanguloy0 <= segundoRetanguloy1){
+            var leftRetangulo2 = (segundoRetanguloy0 * 10) 
+            retangulo2.style.left = `${leftRetangulo2 + 50}px`
+        } else {
+            var leftRetangulo2 = (segundoRetanguloy1 * 10)
+            retangulo2.style.left = `${leftRetangulo2 + 50}px`
+        }
+    }
+</script>

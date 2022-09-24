@@ -7,33 +7,67 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="inputPrimeiroTriangulox0">
-    <input type="text" id="inputPrimeiroTrianguloy0">
-    <input type="text" id="inputPrimeiroTriangulox1">
-    <input type="text" id="inputPrimeiroTrianguloy1">
+    <input type="text" id="inputPrimeiroRetangulox0">
+    <input type="text" id="inputPrimeiroRetanguloy0">
+    <input type="text" id="inputPrimeiroRetangulox1">
+    <input type="text" id="inputPrimeiroRetanguloy1">
 
     <br>
 
-    <input type="text" id="inputSegundoTriangulox0">
-    <input type="text" id="inputSegundoTrianguloy0">
-    <input type="text" id="inputSegundoTrianguloy1">
-    <input type="text" id="inputSegundoTrianguloy1">
+    <input type="text" id="inputSegundoRetangulox0">
+    <input type="text" id="inputSegundoRetanguloy0">
+    <input type="text" id="inputSegundoRetangulox1">
+    <input type="text" id="inputSegundoRetanguloy1">
     <br>
-    <button onclick="verificarColisao()"></button>
+    <button onclick="verificarColisao()">Verificar colisão</button>
+    <div id="divResultado"></div>
 </body>
 </html>
 
 <script>
     function verificarColisao(){
-        var primeiroTrix0 = Number(inputPrimeiroTriangulox0.value)
-        var primeirotTriy0 = Number(inputPrimeiroTriangulox0.value)
-        var primeiroTrix1 = Number(inputPrimeiroTriangulox1.value)
-        var primeiroTriy1 = Number(inputPrimeiroTrianguloy1.value)
+        var primeiroRetangulox0 = Number(inputPrimeiroRetangulox0.value)
+        var primeiroRetanguloy0 = Number(inputPrimeiroRetangulox0.value)
+        var primeiroRetangulox1 = Number(inputPrimeiroRetangulox1.value)
+        var primeiroRetanguloy1 = Number(inputPrimeiroRetanguloy1.value)
+        /* Através das 2 primeiras cordernadas uso elas mesma para achar as outras 2 formando um retângulo */
+        var primeiroRetangulox2 = primeiroRetangulox0
+        var primeiroRetanguloy2 = primeiroRetanguloy1
+        var primeiroRetangulox3 = primeiroRetangulox1
+        var primeiroRetanguloy3 = primeiroRetanguloy0
 
-        var segundoTriangulox0 = Number(inputSegundoTriangulox0.value)
-        var segundoTriangulox1 = Number(inputSegundoTriangulox1.value)
-        var segundoTrianguloy0 = Number(inputSegundoTrianguloy0.value)
-        var segundoTrianguloy1 = Number(inputSegundoTrianguloy1.value)
+        var segundoRetangulox0 = Number(inputSegundoRetangulox0.value)
+        var segundoRetanguloy0 = Number(inputSegundoRetanguloy0.value)
+        var segundoRetangulox1 = Number(inputSegundoRetangulox1.value)
+        var segundoRetanguloy1 = Number(inputSegundoRetanguloy1.value)
+        var segundoRetangulox2 = segundoRetangulox0
+        var segundoRetanguloy2 = segundoRetanguloy1
+        var segundoRetangulox3 = segundoRetangulox1
+        var segundoRetanguloy3 = segundoRetanguloy0
+
+
+        /* Verificar se uma das coordenadas do segundo retângulo é menor que a do primeiro e caso a verificação for true significa que os retângulo colidem, fazendo o código retorar 1 */
+
+        if (
+            (segundoRetangulox0 <= primeiroRetangulox0 && segundoRetanguloy0 <= primeiroRetanguloy0) || (segundoRetangulox0 <= primeiroRetangulox1 && segundoRetanguloy0 <= primeiroRetanguloy1) || (segundoRetangulox0 <= primeiroTri2 && segundoRetanguloy0 <= primeiroRetanguloy2) || (segundoRetangulox0 <= primeiroRetangulox3 && segundoRetanguloy0 <= primeiroRetanguloy3)
+            ){
+            divResultado.innerHTML = "1"
+        } else if (
+            (segundoRetangulox1 <= primeiroRetangulox0 && segundoRetanguloy1 <= primeiroRetanguloy0) || (segundoRetangulox1 <= primeiroRetangulox1 && segundoRetanguloy1 <= primeiroRetanguloy1) || (segundoRetangulox1 <= primeiroRetangulox2 && segundoRetanguloy1 <= primeiroRetanguloy2) || (segundoRetangulox1 <= primeiroRetangulox3 && segundoRetanguloy1 <= primeiroRetanguloy3)
+            ){
+            divResultado.innerHTML = "1"
+        } else if (
+            (segundoRetangulox2 <= primeiroRetangulox0 && segundoRetanguloy2 <= primeiroRetanguloy0) || (segundoRetangulox2 <= primeiroRetangulox1 && segundoRetanguloy2 <= primeiroRetanguloy1) || (segundoRetangulox2 <= primeiroRetangulox2 && segundoRetanguloy2 <= primeiroRetanguloy2) || (segundoRetangulox2 <= primeiroRetangulox3 && segundoRetanguloy2 <= primeiroRetanguloy3)
+            ) {
+            divResultado.innerHTML = "1"
+        } else if (
+            (segundoRetangulox3 <= primeiroRetangulox0 && segundoRetanguloy3 <= primeiroRetanguloy0) || (segundoRetangulox3 <= primeiroRetangulox1 && segundoRetanguloy3 <= primeiroRetanguloy1) || (segundoRetangulox3 <= primeiroRetangulox2 && segundoRetanguloy3 <= primeiroRetanguloy2) || (segundoRetangulox3 <= primeiroRetangulox3 && segundoRetanguloy3 <= primeiroRetanguloy3)
+            ){
+            divResultado.innerHTML = "1"
+        } else {
+            divResultado.innerHTML = "0"
+        }
+
 
 
     }
