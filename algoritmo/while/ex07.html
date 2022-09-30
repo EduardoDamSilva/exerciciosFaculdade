@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira um numero de 20 a 100: <input type="text" id="inputNumero">
+  <button onclick="exibirMultiplosDeCinco()">Adoro múltiplo de 5</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+  function exibirMultiplosDeCinco(){
+    var numeroInput = Number(inputNumero.value)
+    if (numeroInput < 20 || numeroInput > 100){
+      alert("ERRO!")
+    }
+
+    var numero = 0
+    while (numero < numeroInput){
+      numero += 5
+      divResultado.innerHTML += `${numero} <br>`
+    }
+  }
+</script>

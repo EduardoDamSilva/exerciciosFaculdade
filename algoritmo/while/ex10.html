@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira a quantidade de de títulos mundiais da FIFA que seu clube tem: <input type="text" id="inputQtdMundiais">
+  <button onclick="verTrofeus()">Ver troféus do mundial da FIFA</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+  function verTrofeus(){
+    divResultado.innerHTML = ""
+
+    var qtdMundiais = Number(inputQtdMundiais.value)
+    var numero = 0
+    if(qtdMundiais <= 0){
+      divResultado.innerHTML = "<img style= 'width: 300px' src='felipe.jpg'>"
+    }
+
+    while(numero < qtdMundiais){
+      numero += 1
+      divResultado.innerHTML += `<img style = "width: 200px" src='trofeuMundial.png'>`
+    }
+  }
+</script>
