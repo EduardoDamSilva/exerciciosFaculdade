@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ir no McDonalds</title>
+</head>
+<body>
+  Está chovendo? 
+  <select name="chuva" id="selectChuva">
+    <option value="0">Não</option>
+    <option value="1">Sim</option>
+  </select>
+  <br>
+  Você tem dinhero?
+  <select name="dinheiro" id="selectDinheiro">
+    <option value="0">Não</option>
+    <option value="1">Sim</option>
+  </select>
+  <br>
+  Tem tempo de ir até lá?
+  <select name="tempo" id="selectTempo">
+    <option value="0">Não</option>
+    <option value="1">Sim</option>
+  </select>
+  <br>
+  Gosta de nuggets?
+  <select name="nuggets" id="selectNuggets">
+    <option value="0">Não</option>
+    <option value="1">Sim</option>
+  </select>
+  <br>
+  <button onclick="verificarMc()">Ir no Mc</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+  function verificarMc(){
+    var estaChovendo = Number(selectChuva.value)
+    var temDinheiro = Number(selectDinheiro.value)
+    var temTempo = Number(selectTempo.value)
+    var gostaNuggets = Number(selectNuggets.value)
+    var verificacao1 = !estaChovendo && !temDinheiro && temTempo && !gostaNuggets
+    var verificacao2 = !estaChovendo && !temDinheiro && temTempo && gostaNuggets
+    var verificacao3 = !estaChovendo && temDinheiro && temTempo && gostaNuggets
+    var verificacao4 = estaChovendo && temDinheiro && temTempo && gostaNuggets
+
+    if (verificacao1 || verificacao2 || verificacao3 || verificacao4){
+      divResultado.innerHTML = `Vamos no Mc!!! 😁`
+    } else {
+      divResultado.innerHTML = `Não vamos no Mc. 😞`
+    }
+  }
+</script>
