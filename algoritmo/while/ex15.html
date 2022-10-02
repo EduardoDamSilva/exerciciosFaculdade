@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira a quantidade de elefantes: <input type="text" id="inputQtdElefantes">
+  <button onclick="atazanarMedium()">Atazanar a médium</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+  function atazanarMedium(){
+    var qtdElefantes = Number(inputQtdElefantes.value)
+    var numero = 1
+    var textoIncomodam ='incomodam'
+
+    while(numero < qtdElefantes){
+      textoIncomodam += `, incomodam`
+      numero++
+
+      divResultado.innerHTML += 
+      `
+        1 elefante icomodam muita gente! <br>
+        ${numero} elefantes, ${textoIncomodam} muito mais! <br>
+      `
+    }
+  }
+</script>

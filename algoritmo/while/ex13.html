@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  De quantos em quantos dias você pratica musculaçao? (numero)<input type="text" id="inputIntervaloDias">
+  <br>
+  <button onclick="exibirRotina()">Exibir rotina mensal</button>
+  <div id="divResultado"></div> 
+</body>
+</html>
+<script>
+  function exibirRotina(){
+    var intervaloDeDias = Number(inputIntervaloDias.value)
+    var numero = 1
+    var verificarIntervalosDeDias = intervaloDeDias + 1
+    var qtdDiasMes = 30
+    
+
+
+    divResultado.innerHTML += `Dia ${numero} - Musculação <br>`
+
+    while (numero < qtdDiasMes){
+      numero++
+      if(numero == verificarIntervalosDeDias){
+        divResultado.innerHTML += `Dia ${numero} - Musculação <br>`
+        verificarIntervalosDeDias += intervaloDeDias
+      } else{
+         divResultado.innerHTML += `Dia ${numero} - Comer, dormir etc<br>`
+      }
+     
+      
+    }
+
+
+    /* while(numero < qtdDiasMes){
+      var intervalo = 1 + intervaloDeDias
+      numero++
+      if(numero % intervaloDeDias == 0){
+        divResultado.innerHTML += `Dia ${numero} - Musculação <br>`
+      } else{
+        divResultado.innerHTML += `Dia ${numero} - Comer, dormir etc <br>`
+      }
+
+    } */
+  }
+</script>

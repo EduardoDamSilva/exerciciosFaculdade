@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira a quantidade de pessoas que entrarão no carro: <input type="text" id="inputQtdPessoas"> 
+  <br>
+  Insira a quantidade de pessoas que o veículo suporta: <input type="text" id="inputCapacidadeDoVeiculo">
+  <button onclick="verificarCarona()">#PartiuCarona</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+
+<script>
+  function verificarCarona(){
+    var qtdPessoas = Number(inputQtdPessoas.value)
+    var capacidadeVeiculo = Number(inputCapacidadeDoVeiculo.value)
+    var numero = 1 
+
+
+    divResultado.innerHTML = `Entrou o ${numero}° passageiro (que é o(a) motorista) <br>`
+    while(numero < qtdPessoas){
+      numero++
+      if(numero <= capacidadeVeiculo){
+        divResultado.innerHTML += `Entrou o ${numero}° passageiro <br>`
+      } else{
+        divResultado.innerHTML += `O ${numero}° passageiro terá que esperar! <br>`
+      }
+    }
+
+  }
+</script>

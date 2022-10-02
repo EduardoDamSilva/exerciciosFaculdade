@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira a quantidade de onibus que você precisa pegar: <input type="text" id="inputQtdOnibus"> 
+  <br>
+  Insira a quantidade de trens que você precisa pegar: <input type="text" id="inputQtdTrens"> 
+  <br>
+  Insira a quantidade de metrôs que você precisa pegar: <input type="text" id="inputQtdMetros">
+  <br>
+  <button onclick="verificarTrajeto()">#Partiu Trajeto</button>
+  <div id="divResultado"></div> 
+</body>
+</html>
+<script>
+  function verificarTrajeto(){
+    var qtdOnibus = Number(inputQtdOnibus.value)
+    var qtdTrens = Number(inputQtdTrens.value)
+    var qtdMetros = Number(inputQtdMetros.value)
+    var nOnibus = 0
+    var nTrens = 0
+    var nMetros = 0
+    var numero = 0
+    var cor = ''
+    var meioDeTransporte = ''
+
+    while(nOnibus < qtdOnibus){
+      nOnibus++
+      cor = 'red'
+      numero = nOnibus
+      meioDeTransporte = 'busão'
+      exibirMensagem()
+    }
+
+    while(nTrens < qtdTrens){
+      nTrens++
+      cor = 'green'
+      numero = nTrens
+      meioDeTransporte = 'trem'
+      exibirMensagem()
+    }
+
+    while(nMetros < qtdMetros){
+      nMetros++
+      cor = 'blue'
+      numero = nMetros
+      meioDeTransporte = 'mêtro'
+      exibirMensagem()
+    }
+
+    function exibirMensagem(){
+      var cansaco = ''
+
+      if(numero == 2){
+        cansaco = `Começando a cansar`
+      } else if (numero > 2) {
+        cansaco = `Já cansado!`
+      }
+
+      divResultado.innerHTML += `<span style = "color: ${cor}">Pegando o ${numero}° ${meioDeTransporte} ${cansaco}</span> <br>`
+    }
+  }
+</script>
