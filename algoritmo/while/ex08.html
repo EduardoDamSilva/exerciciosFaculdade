@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira um numero entre 0 e 200 <input type="text" id="inputNumero">
+  <button onclick="exibirNumeros()">Viva o 7!</button>
+  <div id="divResultado"> </div>
+</body>
+</html>
+<script>
+  function exibirNumeros(){
+    var numero = Number(inputNumero.value)
+    var contador = 0
+
+    while (contador++ < numero){
+
+      if(contador % 7 == 0){
+        divResultado.innerHTML += `${contador} <br>`
+      }
+    }
+  }
+</script>
