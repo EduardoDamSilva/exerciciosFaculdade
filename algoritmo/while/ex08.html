@@ -15,13 +15,27 @@
 <script>
   function exibirNumeros(){
     var numero = Number(inputNumero.value)
-    var contador = 0
-
-    while (contador++ < numero){
-
-      if(contador % 7 == 0){
-        divResultado.innerHTML += `${contador} <br>`
+    
+    if(numero < 0 || numero > 200){
+      alert("ERRO!")
+    } else {
+      
+      var contador = 0
+      while (contador++ <= numero){    
+        if(contador % 7 == 0){
+          divResultado.innerHTML += `${contador} <br>`
+        }
       }
     }
+    
+    
+    
+    /*while(contador < numero){
+    contador += 7
+    divResultado.innerHTML += `${contador} <br>`
+  }*/
+    
+    
+    
   }
 </script>

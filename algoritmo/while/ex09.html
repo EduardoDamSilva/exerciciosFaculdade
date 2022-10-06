@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   Insira o numero: <input type="text" id="inputNumero"> <br>
   Insira uma frase: <input type="text" id="inputFrase">
   <button onclick="exibirFrase()">Papagaio</button>
 </body>
+
 </html>
 <script>
-  function exibirFrase(){
-    var numeroInput = Number(inputNumero.value)
+  function exibirFrase() {
     var frase = inputFrase.value
-    console.log(frase.length)
-    if (frase.lenght < 3){
-      alert("ERRO!")
-    }
-  
     
-    var numero = 0
-    var numero2 = 0
-    var texto = ""
-    while(numero < numeroInput){
-      while(numero2 < numeroInput){
-          texto = `${frase} ` + texto 
+    if (frase.length < 3) {
+      alert("ERRO!") 
+    } else {
+      
+      var numeroInput = Number(inputNumero.value)
+      var numero = 0
+      var numero2 = 0
+      var texto = ""
+      while (numero < numeroInput) {
+        while (numero2 < numeroInput) {
+          texto += `${frase} `
           numero2 += 1
         }
-      alert(`${texto}`)
-      numero += 1
+        alert(`${texto}`)
+        numero += 1
+      }
     }
+
+
+
   }
 </script>

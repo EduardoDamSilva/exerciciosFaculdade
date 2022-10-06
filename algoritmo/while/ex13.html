@@ -11,11 +11,35 @@
   <br>
   <button onclick="exibirRotina()">Exibir rotina mensal</button>
   <div id="divResultado"></div> 
+  
 </body>
 </html>
 <script>
   function exibirRotina(){
+    divResultado.innerHTML = `Dia 1 - Musculação <br>`
+    
+    var diaAtual = 2    
+    var diasMes = 30
     var intervaloDeDias = Number(inputIntervaloDias.value)
+    var verificarIntervaloDeDias = intervaloDeDias + 1
+    while(diaAtual <= diasMes){
+
+      if(verificarIntervaloDeDias == diaAtual){
+        divResultado.innerHTML += `Dia ${diaAtual} - Musculação <br>`
+        verificarIntervaloDeDias += intervaloDeDias
+      } else {
+        divResultado.innerHTML += `Dia ${diaAtual} - Comer, Dormir etc <br>`
+      }
+
+      diaAtual++
+    }
+
+
+
+
+
+
+    /*var intervaloDeDias = Number(inputIntervaloDias.value)
     var numero = 1
     var verificarIntervalosDeDias = intervaloDeDias + 1
     var qtdDiasMes = 30
@@ -34,7 +58,7 @@
       }
      
       
-    }
+    }*/
 
 
     /* while(numero < qtdDiasMes){
