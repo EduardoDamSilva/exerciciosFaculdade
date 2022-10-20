@@ -22,43 +22,40 @@
     var qtdOnibus = Number(inputQtdOnibus.value)
     var qtdTrens = Number(inputQtdTrens.value)
     var qtdMetros = Number(inputQtdMetros.value)
-    var nOnibus = 0
-    var nTrens = 0
-    var nMetros = 0
 
-  while(nOnibus < qtdOnibus){
-    nOnibus++
+    var contador = 0
+    while(contador++ < qtdOnibus){
     var cansaco = ''
     
-    if(nOnibus == 2){
+    if(contador == 2){
       cansaco = `Começando a cansar`
-    } else if (nOnibus > 2) {
+    } else if (contador > 2) {
       cansaco = `Já cansado!`
     }
 
     divResultado.innerHTML += `<span style = "color: red">Pegando o ${nOnibus}° busão ${cansaco}</span> <br>`
   }
 
-  while(nTrens < qtdTrens){
-    nTrens++
+  contador = 0
+  while(contador++ < qtdTrens){
     var cansaco = ''
 
-    if(nTrens == 2){
+    if(contador == 2){
       cansaco = `Começando a cansar`
-    } else if (nTrens > 2) {
+    } else if (contador > 2) {
       cansaco = `Já cansado!`
     }
 
     divResultado.innerHTML += `<span style = "color: green">Pegando o ${nTrens}° trem ${cansaco}</span> <br>`
   }
 
-  while(nMetros < qtdMetros){
-    nMetros++
+  contador = 0
+  while(contador++ < qtdMetros){
     var cansaco = ''
 
-    if(nMetros == 2){
+    if(contador == 2){
       cansaco = `Começando a cansar`
-    } else if (nMetros > 2) {
+    } else if (contador > 2) {
       cansaco = `Já cansado!`
     }
 

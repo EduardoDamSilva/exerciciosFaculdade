@@ -22,33 +22,26 @@
     var qtdOnibus = Number(inputQtdOnibus.value)
     var qtdTrens = Number(inputQtdTrens.value)
     var qtdMetros = Number(inputQtdMetros.value)
-    var nOnibus = 0
-    var nTrens = 0
-    var nMetros = 0
-    var numero = 0
     var cor = ''
     var meioDeTransporte = ''
 
-    while(nOnibus < qtdOnibus){
-      nOnibus++
+    var contador = 0
+    while(contador++ < qtdOnibus){
       cor = 'red'
-      numero = nOnibus
       meioDeTransporte = 'busão'
       exibirMensagem()
     }
 
-    while(nTrens < qtdTrens){
-      nTrens++
+    contador = 0
+    while(contador++ < qtdTrens){
       cor = 'green'
-      numero = nTrens
       meioDeTransporte = 'trem'
       exibirMensagem()
     }
 
-    while(nMetros < qtdMetros){
-      nMetros++
+    contador = 0
+    while(contador++ < qtdMetros){
       cor = 'blue'
-      numero = nMetros
       meioDeTransporte = 'mêtro'
       exibirMensagem()
     }
@@ -56,13 +49,13 @@
     function exibirMensagem(){
       var cansaco = ''
 
-      if(numero == 2){
+      if(contador == 2){
         cansaco = `Começando a cansar`
-      } else if (numero > 2) {
+      } else if (contador > 2) {
         cansaco = `Já cansado!`
       }
 
-      divResultado.innerHTML += `<span style = "color: ${cor}">Pegando o ${numero}° ${meioDeTransporte} ${cansaco}</span> <br>`
+      divResultado.innerHTML += `<span style = "color: ${cor}">Pegando o ${contador}° ${meioDeTransporte} ${cansaco}</span> <br>`
     }
   }
 </script>

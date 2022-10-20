@@ -17,8 +17,7 @@
     var numero100 = 100
 
     while(numero < numero100){
-      numero++
-      if ((numero % 3 == 0) && (numero % 5 == 0)){
+      if (numero % 15 == 0){
         divResultado.innerHTML += `É TRI!É PENTA! <br>`
       } else if (numero % 3 == 0){
         divResultado.innerHTML += `É TRI! <br>`
@@ -27,7 +26,7 @@
       } else {
         divResultado.innerHTML += `${numero} <br>`
       }
-
+      numero++
       
     }
   }
