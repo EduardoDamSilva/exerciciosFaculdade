@@ -14,10 +14,11 @@ foreign key (fkIndicador) references cliente(idCliente)
 );
 
 create table venda(
-idVenda int auto_increment primary key,
+idVenda int auto_increment,
 total decimal(10, 2),
 dataVenda date,
 fkCliente int,
+primary key(idVenda, fkCliente),
 foreign key (fkCliente) references cliente(idCliente)
 );
 
@@ -29,10 +30,11 @@ preco decimal(10, 2)
 );
 
 create table pedido(
-idPedido int auto_increment primary key,
+idPedido int auto_increment,
 quantidade int,
 desconto varchar(45),
 fkVenda int,
+primary key(idPedido, fkVenda, fkCliente, fkProduto),
 foreign key (fkVenda) references venda(idVenda),
 fkCliente int,
 foreign key (fkCliente) references cliente(idCliente),
