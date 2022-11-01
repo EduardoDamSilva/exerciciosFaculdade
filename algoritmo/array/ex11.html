@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Dia do depósito <input type="text" id="inputDiaDeposito"> <br>
+  Valor depositado <input type="text" id="inputValorDeposito">
+  <button onclick="guardarDinheiro()">Guardar</button> <br>
+  Digite o intervalo de dias que deseja analisar: <br>
+  <input type="text" id="inputComecoIntervalo">
+  <input type="text" id="inputFinalIntervalo">
+  <button onclick="reverDeposito()">Rever Depositos</button>
+
+</body>
+</html>
+<script>
+  const listaDiaDeposito = []
+  const listaValorDeposito = []
+  function guardarDinheiro(){
+    const diaDeposito = inputDiaDeposito.value
+    const valorDeposito = inputValorDeposito.value
+
+    listaDiaDeposito.push(diaDeposito)
+    listaValorDeposito.push(valorDeposito)
+  }
+
+  function reverDeposito(){
+    
+  }
+</script>

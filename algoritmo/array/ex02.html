@@ -7,10 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    Para que lugares você já viajou? <input type="text" id="inputLugarViagem">
-    <button onclick="cadastrarLocal()">Cadastrar Local</button>
+    Para que lugares você já viajou? <input type="text" id="inputViagem">
+    <button onclick="cadastrarViagem()">Cadastrar Local</button> <br>
+    Coloque um numero para reelembrar uma viagem <input type="text" id="inputNumeroReelembrar">
+    <button onclick="reelembrarViagem()">Reelembrar Viagem</button>
+    <div id="divResultado"></div>
 </body>
 </html>
 <script>
-    
+    const lista_viagens = []
+    function cadastrarViagem(){
+        const viagem = inputViagem.value
+        lista_viagens.push(viagem)
+    }
+
+    function reelembrarViagem(){
+        const numeroReelembrar = Number(inputNumeroReelembrar.value) - 1
+        divResultado.innerHTML = lista_viagens[numeroReelembrar]
+    }
 </script>

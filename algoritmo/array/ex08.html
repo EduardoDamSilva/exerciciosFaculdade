@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira sua nota: <br> <input type="text" id="inputNota">
+  <button onclick="cadastrarNota()">Cadastrar Nota</button> 
+  <br>
+  Digite o intervalo de notas que deseja analisar: <br>
+  <input type="text" id="inputComecoIntervalo">
+  <input type="text" id="inputFimIntervalo">
+  <button onclick="reverNotas()">Rever as notas</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+  var listaNotas = []
+  function cadastrarNota(){
+    var nota = inputNota.value
+    listaNotas.push(nota)
+  }
+
+  function reverNotas(){
+    const comecoIntervalo = Number(inputComecoIntervalo.value) 
+    const fimIntervalo = Number(inputFimIntervalo.value) 
+    divResultado.innerHTML = ""
+
+    var somaNumero = 0
+    for(var i = (comecoIntervalo - 1); i < (fimIntervalo - 1); i++){
+      somaNumero += Number(listaNotas[i])
+      divResultado.innerHTML += `${listaNotas[i]} <br>`
+    }
+    const media = somaNumero / (fimIntervalo - comecoIntervalo)
+    divResultado.innerHTML += `Foram cadastras ${listaNotas.length} notas que estão no intervalo de  ${comecoIntervalo} até ${fimIntervalo} e a média dessas notas é ${media.toFixed(2)}`
+  }
+
+</script>

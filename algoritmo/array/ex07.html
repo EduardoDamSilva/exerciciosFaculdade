@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira o nome dos alunos/ Insira o nome do aluno que deseja pesquisar <input type="text" id="inputNomeAluno">
+  <button onclick="cadastrarAluno()">Cadastrar</button>
+  <button onclick="pesquisarAluno()">Pesquisar</button>
+  <div id="divResultado"></div>
+
+</body>
+</html>
+<script>
+  const listaAlunos = []
+  function cadastrarAluno(){
+    const nomeAluno = inputNomeAluno.value
+    listaAlunos.push(nomeAluno)
+    console.log(listaAlunos)
+    exibirAlunos()
+  }
+
+  function exibirAlunos(){
+    divResultado.innerHTML = ""
+    for(var i = 0; i < listaAlunos.length; i++){
+      divResultado.innerHTML += `${listaAlunos[i]} <br>`
+    }
+  }
+
+  function pesquisarAluno(){
+    const nomeAluno = inputNomeAluno.value
+    var contadorNome = 0
+
+    for(var i = 0; i < listaAlunos.length; i++){
+      if(nomeAluno == listaAlunos[i]){
+        contadorNome = 1 + contadorNome
+      }
+    }
+
+    alert(`O Aluno ${nomeAluno} apareceu ${contadorNome} na lista!`)
+  }
+</script>

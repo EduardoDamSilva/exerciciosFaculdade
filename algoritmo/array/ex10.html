@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Digite um número qualquer: <input type="text" id="inputNumero">
+  <button onclick="cadastrarNumero()">Analisar histórico</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+  const listaNumeros = []
+  function cadastrarNumero(){
+    const numero = inputNumero.value
+    listaNumeros.push(numero)
+    exibirNumeros()
+  }
+
+  function exibirNumeros(){
+    divResultado.innerHTML = ""
+
+    var maior = 0
+    var menor = Number(listaNumeros[0])
+    for(var i = 0; i < listaNumeros.length; i++){
+      divResultado.innerHTML += `${i + 1}° Número: ${listaNumeros[i]} <br>`
+
+      if (listaNumeros[i] > maior){
+        maior = Number(listaNumeros[i])
+      }
+
+      if (listaNumeros[i] < menor){
+        menor = listaNumeros[i]
+      }
+    }
+
+    divResultado.innerHTML += `
+    Maior: ${maior} <br>
+    Menor: ${menor}
+    `
+  }
+
+</script>

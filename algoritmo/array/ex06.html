@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira o nome dos alunos: <input type="text" id="inputNomeAluno">
+  <button onclick="cadastrar()">Cadastrar</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+  const listaAlunos = []
+  function cadastrar(){
+    const nomeAluno = inputNomeAluno.value
+    var nomeIgual = false
+    if (listaAlunos.length > 0){
+      for(var i = 0; i < listaAlunos.length; i++){
+        if(nomeAluno == listaAlunos[i]){
+          alert(`O aluno ${nomeAluno} já existe na lista`)
+          nomeIgual = true
+        }
+      }
+
+      if(!nomeIgual){ 
+      listaAlunos.push(nomeAluno)
+      exibirAlunos()
+      }
+
+    } else {
+      listaAlunos.push(nomeAluno)
+      exibirAlunos()
+    }
+  } 
+
+  function exibirAlunos(){
+    divResultado.innerHTML = ""
+    for(var i = 0; i < listaAlunos.length; i++){
+      divResultado.innerHTML += `${listaAlunos[i]} <br>`
+    }
+  }
+</script>

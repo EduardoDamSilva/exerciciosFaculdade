@@ -13,22 +13,21 @@
 </body>
 </html>
 <script>
-    const lista = []
+    const listaFilme = []
     function cadastrar(){
-        const filme = inputFilme.value
-        lista.push(filme)
+        listaFilme.push(inputFilme.value)
 
         var texto = '' 
-        if(lista[2] == undefined){
+        if(listaFilme[2] == undefined){
             texto = "Ainda não existe"
         } else {
-            texto = lista[2]
+            texto = listaFilme[2]
         }
 
         divResultado.innerHTML = `
-        Seu filme favorito: ${lista[0]} <br>
+        Seu filme favorito: ${listaFilme[0]} <br>
         Seu 3º filme favorito: ${texto} <br>
-        Total de filmes cadastrados: ${lista.length}
+        Total de filmes cadastrados: ${listaFilme.length}
         `
     }
 </script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira o nome das linhas de ônibus: <input type="text" id="inputLinhaOnibus">
+  <button onclick="gravarLinha()">Gravar busão</button> <br>
+  Pesquisar linha de ônibus: <input type="text" id="inputPesquisarLinha">
+  <button onclick="pesquisarLinha()">Pesquisar</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+  const listaLinhasOnibus = []
+  function gravarLinha(){
+    const linhaOnibus = inputLinhaOnibus.value
+    listaLinhasOnibus.push(linhaOnibus)
+    exibirLinhas()
+  }
+
+  function exibirLinhas(){
+    divResultado.innerHTML = ""
+    for(var i = 0; i < listaLinhasOnibus.length; i++){
+      divResultado.innerHTML += `${listaLinhasOnibus[i]} <br>`
+    }
+  }
+
+  function pesquisarLinha(){
+    const pesquisarLinhaOnibus = inputPesquisarLinha.value
+
+    var qtdLinhas = 0
+    var ordemLinhas = ""
+    for(var i = 0; i < listaLinhasOnibus.length; i++){
+      if (pesquisarLinhaOnibus == listaLinhasOnibus[i]){
+        qtdLinhas += 1
+
+        if(ordemLinhas == ""){
+          ordemLinhas = `${i + 1}`
+        } else {
+          ordemLinhas += `, ${i + 1}`
+
+        }
+      }
+    }
+
+    if (qtdLinhas > 0){
+      divResultado.innerHTML += `Você já pegou essa linha ${qtdLinhas} vezes, nessa ordem: ${ordemLinhas} <br>`
+    } else {
+      divResultado.innerHTML += `Você nunca pegou essa linha <br>`
+    }
+  }
+
+
+</script>
