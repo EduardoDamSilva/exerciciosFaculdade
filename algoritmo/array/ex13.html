@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Nome do Produto: <input type="text" id="inputNomeProduto">
+  Preço de Compra: <input type="text" id="inputPrecoProduto">
+  <button onclick="cadastrar()">Cadastrar</button> <br>
+  <button onclick="exibirRelatorio()">Relatório de estoque</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+
+  const listaNomeProduto = []
+  const listaPreco = [] 
+  function cadastrar(){
+    const nomeProduto = inputNomeProduto.value
+    const precoProduto = Number(inputPrecoProduto.value)
+
+    listaNomeProduto.push(nomeProduto)
+    listaPreco.push(precoProduto)
+  }
+
+  function exibirRelatorio(){
+
+
+    var somaPrecoDeCompra = 0
+    var mediaPrecoDeVenda = 0
+    var precoProdutoMaisCaro = 0
+    var precoProdutoMaisBarato = 0
+    var produtoMaisCaro = ""
+    var produtoMaisBarato = ""
+    var produtoMaisBarato = listaPreco[0]
+    divResultado.innerHTML = ""
+    divResultado.innerHTML = `Total de produto: ${listaNomeProduto.length} <br>`
+
+    for(var i = 0; i < listaNomeProduto.length; i++){
+      somaPrecoDeCompra += listaPreco[i]
+      mediaPrecoDeVenda += listaPreco[i] * 1.25
+
+      divResultado.innerHTML += 
+      `
+      Produto ${i+1}: ${listaNomeProduto[i]} <br>
+      Preço de compra: R$${listaPreco[i]}. Vender por R$${listaPreco[i] * 1.25} <br>
+      <br>
+      `
+
+      if(listaPreco[i] > precoProdutoMaisCaro){
+        precoProdutoMaisCaro = listaPreco[i]
+        produtoMaisCaro = listaNomeProduto[i]
+      }
+
+      if(listaPreco[i] < precoProdutoMaisBarato){
+        precoProdutoMaisBarato = listaPreco[i]
+        produtoMaisBarato = listaNomeProduto[i]
+      }
+    }
+
+    divResultado.innerHTML += 
+    `
+    <br>
+    Produto mais caro: ${produtoMaisCaro} <br>
+    Produto mais barato: ${produtoMaisBarato} <br>
+    Soma dos preços de compra: ${somaPrecoDeCompra} <br>
+    Média de preço: ${mediaPrecoDeVenda}
+    `
+
+  }
+</script>

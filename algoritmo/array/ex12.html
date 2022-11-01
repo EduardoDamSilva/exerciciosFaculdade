@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Insira o RA do aluno: <input type="text" id="inputRA">
+  Insira a nota do aluno: <input type="text" id="inputNotaAluno">
+  <button onclick="guardarNota()">Guardar</button> <br>
+  Insira 'P' ou 'I' <input onkeyup="verificarValorInput()" type="text" id="inputParOuImpar">
+  <button onclick="analisarNotas()">Analisar</button>
+  <div id="divResultado"></div>
+</body>
+</html>
+<script>
+
+  const listaRAs = []
+  const listaNotas = []
+  function guardarNota(){
+    const raAluno = Number(inputRA.value)
+    const notaAluno = Number(inputNotaAluno.value)
+    listaRAs.push(raAluno)
+    listaNotas.push(notaAluno)
+  }
+
+  function verificarValorInput(){
+    var parOuImpar = inputParOuImpar.value
+
+    if(parOuImpar != "P" && parOuImpar != "I" && parOuImpar != "p" && parOuImpar != "i"){
+      alert('Valor invalido, entre com P ou I')
+      inputParOuImpar.value = ""
+    }
+  }
+
+  function analisarNotas(){
+    var parOuImpar = inputParOuImpar.value
+
+    var media = 0
+    var contadorNotas = 0
+    var novaMedia = 0
+    var contadorNotasAcimaDaMedia = 0
+    if(parOuImpar == "P" || parOuImpar == "p"){
+      
+      for(var i = 0; i < listaNotas.length; i++){
+        if(listaRAs[i] % 2 == 0){
+          media += listaNotas[i] 
+          contadorNotas++
+        }
+      }
+      media = media / contadorNotas
+
+      for(var j = 0; j < listaNotas.length; j++){
+        if(listaRAs[j] % 2 == 0 || listaRAs[j] >= media){
+          divResultado.innerHTML += `Aluno com RA = ${listaRAs[j]} e nota ${listaNotas[j]} foi selecionado pois a média é ${media}`
+          contadorNotasAcimaDaMedia++
+          novaMedia += listaNotas[j]
+        }
+      }
+
+    } else {
+
+      for(var k = 0; k < listaNotas.length; k++){
+        if(listaRAs[k] % 2 != 0){
+          media += listaNotas[k] 
+          contadorNotas++
+        }
+      }
+      media = media / contadorNotas
+
+      for(var l = 0; l < listaNotas.length; l++){
+        if(listaRAs[l] % 2 != 0 || listaRAs[l] >= media){
+          divResultado.innerHTML += `Aluno com RA = ${listaRAs[l]} e nota ${listaNotas[l]} foi selecionado pois a média é ${media}`
+          contadorNotasAcimaDaMedia++
+          novaMedia += listaNotas[l]
+        }
+      }
+
+
+    }
+    novaMedia = novaMedia / contadorNotasAcimaDaMedia
+
+    divResultado.innerHTML = `Quantidade de notas acima da média: ${contadorNotasAcimaDaMedia} <br>
+    Nova média: ${novaMedia}`
+
+  }
+</script>

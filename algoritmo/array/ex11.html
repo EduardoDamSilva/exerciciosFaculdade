@@ -14,7 +14,9 @@
   <input type="text" id="inputComecoIntervalo">
   <input type="text" id="inputFinalIntervalo">
   <button onclick="reverDeposito()">Rever Depositos</button>
-
+  <div id="divResultado"></div>
+<style>
+</style>
 </body>
 </html>
 <script>
@@ -29,6 +31,28 @@
   }
 
   function reverDeposito(){
-    
+    const comecoIntervalo = inputComecoIntervalo.value - 1
+    const finalIntervalo = inputFinalIntervalo.value - 1
+
+    divResultado.innerHTML = ""
+    var total = 0
+    var contadorDias = 0 
+    for(var i = comecoIntervalo; i <= finalIntervalo; i++){
+      var cor = 'aquamarine'
+      if(i % 2 == 0){
+        cor = 'chartreuse'
+      }
+
+      contadorDias += 1
+      total += Number(listaValorDeposito[i])
+      divResultado.innerHTML += `<span style="color: ${cor}">dia = ${listaDiaDeposito[i]} Valor depositado = R$ ${listaValorDeposito[i]}</span><br>`
+    }
+    var media = total / contadorDias
+    divResultado.innerHTML += 
+    `
+    <span>Total do valor depositados nos dias selecionados: R$ ${total}</span> <br>
+    <span>Total do valor depositados nos dias selecionados: R$ ${media}</span> <br>
+    `
+
   }
 </script>
