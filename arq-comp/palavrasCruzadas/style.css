@@ -1,0 +1,452 @@
+main{
+  width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+  ". . . . . . . . . . . . . . . . . . . dataD . . . . ."
+  ". . . . . . . . . . . . . . . . . . . dataD . . . . ."
+  ". . . . . . . . . . . . . . . . . . . dataT . . . . ."
+  ". . . . . . . . . . . . . . . . . . . dataA2 . . . . ."
+  ". . . . . . . . . . . . . . . . . . . traco . . . . flashF"
+  ". . . . . . . . . . . . . cacheC cacheA cacheC2 cacheH epromE . dataB . . . . flashL"
+  "threadsT threadsH threadsR threadsE threadsA threadsD threadsS . . . . . . . . . . epromP . dataU . . . . flashA"
+  ". . . . . dmaM . . . . . mdmM . . . adressA adressD adressR adressE dataS adressS traco2 adressB adressU adressS2"
+  ". . . dcD dcU dcA dcL dcTraco dcC dcO dcR mdmE . . . . . epromO . . . . . . flashH"
+  ". . . . . . . . cpuP . . mdmM2 . . . ramR ramA epromM . . . . . . ."
+  ". . . . . . . . cpuU . . mdmO . . . registradoresE . . . . . . . . ."
+  ". . . . . . . . . . . mdmR . . . registradoresG . . . . . . . . ."
+  ". . . . . . . . . . . mdmI i5 . . registradoresI i7 . . . . . . . ."
+  ". . . . . . . . . . . mdmA . . . registradoresS . . . . . . . . ."
+  ". . . . . . . . . . . mdmTraco . . . registradoresT . . . . . . . . ."
+  ". . . . . . . . quad-coreQ quad-coreU quad-coreA quad-coreD quad-coreTraco quad-coreC quad-coreO registradoresR quad-coreE . . . . . . . ."
+  ". . . . . . . . . ulaL . mdmE2 . csS . registradoresA . . . . . . . . ."
+  ". . . . . . . . . ulaA . mdmTraco2 . . . registradoresD . . . . . . . . ."
+  ". . . . . . . . . . . mdmM3 . . . registradoresO . . . . . . . . ."
+  ". . . . . . . . . . . mdmA2 . . . registradoresR2 romO romM . . . . . . ."
+  ". . . . . . . . . . . mdmS . . . registradoresE2 . . . . . . . . ."
+  ". . . . . . . . . . . mdmS2 . . . registradoresS2 . . . . . . . . ."
+  ". . . . . . . . . . . mdmA3 . . . registradoresS2 . . . . . . . . ."
+  ;
+}
+
+div input{
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  text-align: center;
+  border: 2px solid black;
+}
+
+h1{
+  text-align: center;
+  font-style: sans-serif;
+  font-size: 2rem;
+}
+
+span{
+  position: absolute;
+  padding: 3px 3px;
+}
+
+/* Data-bus */
+
+
+.data-bus-d{
+  grid-area: dataD;
+}
+
+.data-bus-a{
+  grid-area: dataA;
+}
+
+.data-bus-t{
+  grid-area: dataT;
+}
+
+.data-bus-a{
+  grid-area: dataA2;
+}
+
+.data-bus--{
+  grid-area: traco;
+}
+
+.data-bus-b{
+  grid-area: dataB;
+}
+
+.data-bus-u{
+  grid-area: dataU;
+}
+
+.data-bus-s{
+  grid-area: dataS;
+}
+
+/* Adress-bus */
+.adress-bus-a{
+  grid-area: adressA;
+}
+
+.adress-bus-d{
+  grid-area: adressD;
+}
+
+.adress-bus-r{
+  grid-area: adressR;
+}
+
+.adress-bus-e{
+  grid-area: adressE;
+}
+
+.adress-bus-s{
+  grid-area: adressS;
+}
+
+.adress-bus--{
+  grid-area: traco2;
+}
+
+.adress-bus-b{
+  grid-area: adressB;
+}
+
+.adress-bus-u{
+  grid-area: adressU;
+}
+
+.adress-bus-s2{
+  grid-area: adressS2;
+}
+
+/* Flash */
+
+.flash-f{
+  grid-area: flashF;
+}
+
+.flash-l{
+  grid-area: flashL;
+}
+
+.flash-a{
+  grid-area: flashA;
+}
+
+.flash-h{
+  grid-area: flashH;
+}
+
+/* Eprom */
+
+.eprom-e{
+  grid-area: epromE;
+}
+
+.eprom-p{
+  grid-area: epromP;
+}
+
+.eprom-o{
+  grid-area: epromO;
+}
+
+.eprom-m{
+  grid-area: epromM;
+}
+
+/* cache */
+
+.cache-c{
+  grid-area: cacheC;
+}
+
+.cache-a{
+  grid-area: cacheA;
+}
+
+.cache-c2{
+  grid-area: cacheC2
+}
+
+.cache-h{
+  grid-area: cacheH;
+}
+
+/* ram */
+
+.ram-r{
+  grid-area: ramR;
+}
+
+.ram-a{
+  grid-area: ramA;
+}
+
+.ram-m{
+  grid-area: ramM;
+}
+
+/* registradores */
+
+.registradores-e{
+  grid-area: registradoresE;
+}
+
+.registradores-g{
+  grid-area: registradoresG;
+}
+
+.registradores-i{
+  grid-area: registradoresI;
+}
+
+.registradores-s{
+  grid-area: registradoresS;
+}
+
+.registradores-t{
+  grid-area: registradoresT;
+}
+
+.registradores-r{
+  grid-area: registradoresR;
+}
+
+.registradores-a{
+  grid-area: registradoresA;
+}
+
+.registradores-d{
+  grid-area: registradoresD;
+}
+
+.registradores-o{
+  grid-area: registradoresO;
+}
+
+.registradores-r2{
+  grid-area: registradoresR2;
+}
+
+.registradores-e2{
+  grid-area: registradoresE2;
+}
+
+.registradores-s2{
+  grid-area: registradoresS2;
+}
+
+/* i7 */
+
+.i7-7{
+  grid-area: i7;
+}
+
+/* rom */
+
+.rom-o{
+  grid-area: romO;
+}
+
+.rom-m{
+  grid-area: romM;
+}
+
+/* quad-core */
+
+.quad-core-q{
+  grid-area: quad-coreQ;
+}
+
+.quad-core-u{
+  grid-area: quad-coreU;
+}
+
+.quad-core-a{
+  grid-area: quad-coreA;
+}
+
+.quad-core-d{
+  grid-area: quad-coreD;
+}
+
+.quad-core--{
+  grid-area: quad-coreTraco;
+}
+
+.quad-core-c{
+  grid-area: quad-coreC;
+}
+
+.quad-core-o{
+  grid-area: quad-coreO
+}
+
+.quad-core-e{
+  grid-area: quad-coreE
+}
+
+.cs-s{
+  grid-area: csS;
+}
+
+/* ula */
+
+.ula-l{
+  grid-area: ulaL;
+}
+
+.ula-a{
+  grid-area: ulaA;
+}
+
+/* memoria-de-massa */
+
+.MdM-m{
+  grid-area: mdmM;
+}
+
+.MdM-e{
+  grid-area: mdmE;
+}
+
+.MdM-m2{
+  grid-area: mdmM2;
+}
+
+.MdM-o{
+  grid-area: mdmO;
+}
+
+.MdM-r{
+  grid-area: mdmR;
+}
+
+.MdM-i{
+  grid-area: mdmI;
+}
+
+.MdM-a{
+  grid-area: mdmA;
+}
+
+.MdM--{
+  grid-area: mdmTraco;
+}
+
+.MdM-e2{
+  grid-area: mdmE2;
+}
+
+.MdM--2{
+  grid-area: mdmTraco2;
+}
+
+.MdM-m3{
+  grid-area: mdmM3;
+}
+
+.MdM-a2{
+  grid-area: mdmA2;
+}
+
+.MdM-s{
+  grid-area: mdmS
+}
+
+.MdM-s2{
+  grid-area: mdmS2
+}
+
+.MdM-a3{
+  grid-area: mdmA3
+}
+
+/* i5 */
+
+.i5-5{
+  grid-area: i5
+}
+
+/* dual-core */
+
+.dual-core-d{
+  grid-area: dcD;
+}
+
+.dual-core-u{
+  grid-area: dcU;
+}
+
+.dual-core-a{
+  grid-area: dcA;
+}
+
+.dual-core-l{
+  grid-area: dcL;
+}
+
+.dual-core--{
+  grid-area: dcTraco;
+}
+
+.dual-core-c{
+  grid-area: dcC;
+}
+
+.dual-core-o{
+  grid-area: dcO;
+}
+
+.dual-core-r{
+  grid-area: dcR;
+}
+
+/* cpu */
+
+.cpu-p{
+  grid-area: cpuP;
+}
+
+.cpu-u{
+  grid-area: cpuU;
+}
+
+/* dma */
+
+.dma-m{
+  grid-area: dmaM
+}
+
+/* threads */
+
+.threads-t{
+  grid-area: threadsT
+}
+
+.threads-h{
+  grid-area: threadsH
+}
+
+.threads-r{
+  grid-area: threadsR
+}
+
+.threads-e{
+  grid-area: threadsE
+}
+
+.threads-a{
+  grid-area: threadsA
+}
+
+.threads-d{
+  grid-area: threadsD
+}
+
+.threads-s{
+  grid-area: threadsS
+}
