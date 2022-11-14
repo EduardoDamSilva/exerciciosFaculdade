@@ -5,7 +5,7 @@ main{
   display: grid;
   grid-template-areas: 
   ". . . . . . . . . . . . . . . . . . . dataD . . . . ."
-  ". . . . . . . . . . . . . . . . . . . dataD . . . . ."
+  ". . . . . . . . . . . . . . . . . . . dataA . . . . ."
   ". . . . . . . . . . . . . . . . . . . dataT . . . . ."
   ". . . . . . . . . . . . . . . . . . . dataA2 . . . . ."
   ". . . . . . . . . . . . . . . . . . . traco . . . . flashF"
@@ -64,7 +64,7 @@ span{
   grid-area: dataT;
 }
 
-.data-bus-a{
+.data-bus-a2{
   grid-area: dataA2;
 }
 
@@ -449,4 +449,14 @@ span{
 
 .threads-s{
   grid-area: threadsS
+}
+
+/* Js */
+
+.vermelho{
+  color: rgb(179, 0, 0);
+}
+
+.azul{
+  color: blue;
 }
