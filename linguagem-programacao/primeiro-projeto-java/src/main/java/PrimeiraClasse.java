@@ -10,6 +10,6 @@ public class PrimeiraClasse {
         
         Integer numero = 42;
         
-        System.out.println("Meu número é: " + numero);
+        System.out.println("Meu número é: " + numero); 
     }
 }
