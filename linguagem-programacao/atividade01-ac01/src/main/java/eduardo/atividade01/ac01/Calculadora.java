@@ -32,6 +32,8 @@ public class Calculadora {
             numeroOperacao = sc.nextInt();
             System.out.println("");
             switch(numeroOperacao){
+                case 0:
+                    break;
                 case 1:
                     System.out.println("Digite um número inteiro:");
                     numeroTabuada = sc.nextInt();
