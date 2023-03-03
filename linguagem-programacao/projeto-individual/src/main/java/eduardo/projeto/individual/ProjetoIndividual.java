@@ -21,7 +21,7 @@ public class ProjetoIndividual {
                     "Digite o número correspondente a operação desejada:\n"
                             + "1 - Calculo de Armadura\n" 
                             + "2 - Descubra seu estilo de jogo\n" 
-                            + "3 - Divisão\n" 
+                            + "3 - Descubra a % dos jogares que estão abaixo de você\n" 
                             + "4 - Subtração\n"
                             + "5 - Potência\n"
                             + "0 - Sair"
@@ -67,8 +67,53 @@ public class ProjetoIndividual {
                             System.out.println("Insira um número válido");
                     }} while(numeroClasse < 1 || numeroClasse > 5);
                     break;
-                //case 3:
-                  //  break;
+                case 3:
+                    Integer numeroElo;
+                    do{System.out.println(
+                            "Digite o número que represente o seu elo:\n"
+                                    + "1 - Desafiante"
+                                    + "2 - Grão-Mestre"
+                                    + "3 - Mestre"
+                                    + "4 - Diamante"
+                                    + "5 - Platina"
+                                    + "6 - Ouro"
+                                    + "7 - Prata"
+                                    + "8 - Bronze"
+                                    + "9 - Ferro"
+                    );
+                    numeroElo = sc.nextInt();
+                    System.out.println("");
+                    switch(numeroElo){
+                        case 1:
+                            System.out.println("Você chegou ao topo Parabéns! você está acima dos 99,98% dos jogares");
+                            break;
+                        case 2:
+                            System.out.println("Você estando Grão-Mestre está acima dos 99,95% dos jogares");
+                            break;
+                        case 3:
+                            System.out.println("Você estando Mestre está acima 99.7% dos jogares");
+                            break;
+                        case 4:
+                            System.out.println("Você estando no Diamante está acima dos 98% dos jogares");
+                            break;
+                        case 5:
+                            System.out.println("Você estando no Platina está acima dos 88% dos jogares");
+                            break;
+                        case 6:
+                            System.out.println("Você estando no Ouro está acima dos 65% dos jogares");
+                            break;
+                        case 7:
+                            System.out.println("Você estando no Prata está acima dos 31%");
+                            break;
+                        case 8:
+                            System.out.println("Você estando no Bronze está acima dos 5% dos jogaredes");
+                            break;
+                        case 9:
+                            System.out.println("Você estando no Ferro não está acima de ninguém :')");
+                            break;
+                    }
+                    }while(numeroElo < 1 || numeroElo > 9);
+                    break;
                 //case 4:
                    // break;
                 //case 5:
