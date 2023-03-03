@@ -20,7 +20,7 @@ public class ProjetoIndividual {
             System.out.println(
                     "Digite o número correspondente a operação desejada:\n"
                             + "1 - Calculo de Armadura\n" 
-                            + "2 - Multiplicação\n" 
+                            + "2 - Descubra seu estilo de jogo\n" 
                             + "3 - Divisão\n" 
                             + "4 - Subtração\n"
                             + "5 - Potência\n"
@@ -39,14 +39,40 @@ public class ProjetoIndividual {
                     System.out.println(fraseResultado);
                     break;
                 case 2:
-                    // Penetração
+                    Integer numeroClasse;
+                    do{System.out.println(
+                            "Qual classe mais chama sua atenção:\n"
+                                    + "1 - Tanque \n"
+                                    + "2 - Mago \n"
+                                    + "3 - Assasino \n"
+                                    + "4 - Dano \n"
+                                    + "5 - Suporte"
+                    );
+                    numeroClasse = sc.nextInt();
+                    System.out.println("");
+                    System.out.println("Sugestão de lanes para jogar");
+                    switch(numeroClasse){
+                        case 1:
+                            System.out.println("Top lane e Jungle");
+                        break;
+                        case 2:
+                            System.out.println("Mid lane, Jungle e Suporte");
+                        case 3:
+                            System.out.println("Mid lane e Jungle");
+                        case 4: 
+                            System.out.println("Adc(Bot lane)");
+                        case 5:
+                            System.out.println("Jungle e Suporte(Bot lane)");
+                        default:
+                            System.out.println("Insira um número válido");
+                    }} while(numeroClasse < 1 || numeroClasse > 5);
                     break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
+                //case 3:
+                  //  break;
+                //case 4:
+                   // break;
+                //case 5:
+                   // break;
             }
         }while(numeroOperacao != 0);
     }
