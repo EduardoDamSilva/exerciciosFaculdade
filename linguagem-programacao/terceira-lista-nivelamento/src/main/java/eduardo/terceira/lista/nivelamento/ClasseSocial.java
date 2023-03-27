@@ -13,14 +13,14 @@ public class ClasseSocial {
         return salario / 1045.0;
     }
     
-    String indificarClasseSocial(Double qtdSM){
+    String idenficarClasseSocial(Double qtdSM){
         if (qtdSM < 2){
             return "E";
-        } else if (qtdSM < 4){
+        } else if (qtdSM <= 4){
             return "D";
-        } else if (qtdSM < 10){
+        } else if (qtdSM <= 10){
             return "C";
-        } else if (qtdSM < 20){
+        } else if (qtdSM <= 20){
             return "B";
         } else {
             return "A";
