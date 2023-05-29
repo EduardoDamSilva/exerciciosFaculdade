@@ -1,0 +1,41 @@
+2023-04-17 17:56:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE FILME(ID INT PRIMARY KEY AUTO_INCREMENTNOME[*] VARCHAR(255) NOT NULANO_LANCAMENTO INT) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE filme(id INT PRIMARY KEY AUTO_INCREMENTnome VARCHAR(255) NOT NULano_lancamento INT) [42001-199]
+2023-04-17 17:56:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE FILME(ID INT PRIMARY KEY AUTO_INCREMENTNOME[*] VARCHAR(255) NOT NULANO_LANCAMENTO INT); "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE filme(id INT PRIMARY KEY AUTO_INCREMENTnome VARCHAR(255) NOT NULano_lancamento INT); [42001-199]
+2023-04-17 17:56:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE FILME(ID INT PRIMARY KEY AUTO_INCREMENTNOME[*] VARCHAR(255) NOT NULLANO_LANCAMENTO INT); "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE filme(id INT PRIMARY KEY AUTO_INCREMENTnome VARCHAR(255) NOT NULLano_lancamento INT); [42001-199]
+2023-04-17 18:04:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILME" already exists; SQL statement:
+CREATE TABLE filme(id INT PRIMARY KEY AUTO_INCREMENT,nome VARCHAR(255) NOT NULL,ano_lancamento INT,) [42101-199]
+2023-04-17 19:26:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'null' (FILME: ""ID"" INT DEFAULT (NEXT VALUE FOR ""PUBLIC"".""SYSTEM_SEQUENCE_1CA75606_72BE_4D72_BCDC_0AA1C3050E1C"") NOT NULL NULL_TO_DEFAULT SEQUENCE ""PUBLIC"".""SYSTEM_SEQUENCE_1CA75606_72BE_4D72_BCDC_0AA1C3050E1C"")"; SQL statement:
+INSERT INTO filme VALUES ('null', 'Vingadores 2', 2007) -- ('null', 'Vingadores 2', 2007) [22018-199]
+2023-04-17 19:26:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'null' (FILME: ""ID"" INT DEFAULT (NEXT VALUE FOR ""PUBLIC"".""SYSTEM_SEQUENCE_DE5FCFF3_811A_4611_83BD_C8EB90190D91"") NOT NULL NULL_TO_DEFAULT SEQUENCE ""PUBLIC"".""SYSTEM_SEQUENCE_DE5FCFF3_811A_4611_83BD_C8EB90190D91"")"; SQL statement:
+INSERT INTO filme VALUES ('null', 'Vingadores 2', 2007) -- ('null', 'Vingadores 2', 2007) [22018-199]
+2023-04-17 19:37:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO filme values (?, ?) [21002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:314)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at org.apache.commons.dbcp2.DelegatingConnection.prepareStatement(DelegatingConnection.java:292)
+	at org.apache.commons.dbcp2.DelegatingConnection.prepareStatement(DelegatingConnection.java:292)
+	at org.springframework.jdbc.core.JdbcTemplate$SimplePreparedStatementCreator.createPreparedStatement(JdbcTemplate.java:1515)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:603)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:850)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:905)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:915)
+	at eduardo.banco.de.dados.BancoDeDados.main(BancoDeDados.java:36)

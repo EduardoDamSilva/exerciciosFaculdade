@@ -14,11 +14,11 @@ public class Bolo {
     Double valor;
     Integer quantidadeVendida = 0;
     
-    void comprarBolo(Integer qtdBolo){
-        if (qtdBolo > 100){
+    void comprarBolo(Integer qtdBoloDesejada){
+        if (qtdBoloDesejada + quantidadeVendida > 100){
             System.out.println("Seu pedido ultrapassou nosso limite diário para esse bolo.");
         } else {
-            quantidadeVendida += qtdBolo;
+            quantidadeVendida += qtdBoloDesejada;
         }
     }
     

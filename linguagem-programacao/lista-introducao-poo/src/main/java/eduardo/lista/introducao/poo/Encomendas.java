@@ -40,7 +40,7 @@ public class Encomendas {
     }
     
     void emitirEtiqueta(){
-        
+        Double frete = calcularFrete();
         System.out.println(
                 String.format("****ETIQUETA PARA O ENVIO**** \n"
                 + "Endereço do remetente: %s \n"
@@ -50,7 +50,7 @@ public class Encomendas {
                 + "Valor encomenda: R$ %.2f \n"
                 + "Valor frete: R$ %.2f \n"
                 + "----------------------------- \n"
-                + "Valor total: R$ %.2f", enderecoRemetente, enderecoDestinatario, tamanho, valorEncomenda, calcularFrete(), (calcularFrete() + valorEncomenda)));
+                + "Valor total: R$ %.2f", enderecoRemetente, enderecoDestinatario, tamanho, valorEncomenda, frete, (frete + valorEncomenda)));
     }
     
 }
